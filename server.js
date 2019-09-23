@@ -27,16 +27,17 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-  var MONGODB_URI;
+  var MONGODB_URI=process.env.MONGODB_URI ||
+   "mongodb://heroku_715klt3h:48o7hhouba353o019r6vh8l2h9@ds033113.mlab.com:33113/heroku_715klt3h";
 // mongoose.connect(MONGODB_URI);
-   mongoose.connect(
-     process.env.MONGODB_URI || 
-     "mongodb://user1:password1@ds033113.mlab.com:33113/heroku_715klt3h",
-     {
-      useMongoClient: true
-    }
-   );
-// mongoose.connect("mongodb://localhost/newsScraperdb", { useNewUrlParser: true });
+  //  mongoose.connect(
+  //    process.env.MONGODB_URI || 
+  //    "mongodb://user1:password1@ds033113.mlab.com:33113/heroku_715klt3h",
+  //    {
+  //     useMongoClient: true
+  //   }
+  //  );
+ mongoose.connect(MONGODB_URI);
 
 
 // Routes
