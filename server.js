@@ -27,15 +27,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-  // var MONGODB_URI= process.env.MONGODB_URI || "mongodb://localhost/newsScraperdb";
+  //var MONGODB_URI= process.env.MONGODB_URI || "mongodb://localhost/newsScraperdb";
   var MONGODB_URI;
 // mongoose.connect(MONGODB_URI);
    mongoose.connect(
      process.env.MONGODB_URI || 
      "mongodb://user1:password1@ds033113.mlab.com:33113/heroku_715klt3h",
-     {
-       useMongoClient: true
-     }
+    
    );
 // mongoose.connect("mongodb://localhost/newsScraperdb", { useNewUrlParser: true });
 
