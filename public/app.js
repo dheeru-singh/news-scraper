@@ -3,7 +3,6 @@ $('.scrape-article').on("click", () => { // Scrap Articles Request
   fetch("/scrape", {method: "GET"}).then(() => window.location.replace("/scrape.html"));
  
 });
-
 // $(document).on("click", ".scrape-article", function() {
 //   $.ajax({
 //     method: "GET",
