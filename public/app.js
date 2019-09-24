@@ -98,9 +98,9 @@ $('.scrape-article').on("click", () => { // Scrap Articles Request
       method: "DELETE",
       url: "/notes/" + thisId
     })
-      // With that done, add the note information to the page
+     
       .then(function(data) {
-        console.log(data);
+      //  console.log(data);
         $("#comments-list").empty();
         $("#comments-list").append("<h5 class='text-center'>Comment is Deleted Successfuly. <h5>");
     
