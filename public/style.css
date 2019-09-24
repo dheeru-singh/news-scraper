@@ -1,5 +1,6 @@
 body{
-    background-color: #04aad7;
+    background-color: #004a5f;
+    font-family: 'Bree Serif', serif;
     background-image: url(basketball.png);
     background-attachment: fixed;
 }
@@ -46,6 +47,7 @@ Ul#articles .btn{
     margin-right: 5px;
     border-radius: 0px;
     box-shadow: 1px 2px 2.5px #bcbcbc;
+    margin-bottom: 5px;
 }
 Ul#articles img{
     min-width: 200px;
@@ -65,4 +67,22 @@ Ul#articles img{
 }
 .modal .form-control{
     margin-bottom: 10px;
+}
+.scrape-article{
+    cursor: pointer;
+}
+@media (max-width: 768px){
+    .navbar-nav .nav-link{
+        border-top: 1px solid #efefef !important;
+    }
+    .navbar-light .navbar-toggler{
+        margin-bottom: 3px;
+    }
+    Ul#articles img{
+        float: initial;
+        margin: 0 auto;
+    }
+    Ul#articles li{
+        text-align: center;
+    }
 }
