@@ -71,6 +71,23 @@ Ul#articles img{
 .scrape-article{
     cursor: pointer;
 }
+#comments-list{
+    list-style-type: none;
+    padding: 0px;
+}
+#comments-list li{
+    background-color: #f3f3f3;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+#comments-list li h5{
+    color:#04aad7;
+    text-align: left !important;
+}
+#comments-list li p{
+    text-align: left !important;
+    margin-bottom: 0px; 
+}
 @media (max-width: 768px){
     .navbar-nav .nav-link{
         border-top: 1px solid #efefef !important;
