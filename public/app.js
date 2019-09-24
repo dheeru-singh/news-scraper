@@ -3,17 +3,7 @@ $('.scrape-article').on("click", () => { // Scrap Articles Request
   fetch("/scrape", {method: "GET"}).then(() => window.location.replace("/scrape.html"));
  
 });
-// $(document).on("click", ".scrape-article", function() {
-//   $.ajax({
-//     method: "GET",
-//     url: "/scrape" 
-//   })
-//     // With that done, add the note information to the page
-//   .then(function(data) {
-//     window.location.replace("/");
-//     alert("DAta is scraped");
-//   })
-// })
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
