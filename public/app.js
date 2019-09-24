@@ -80,7 +80,10 @@ $('.scrape-article').on("click", () => { // Scrap Articles Request
         for(var i=0; i < data.length ; i++){
          
             $("#comments-list").append("<li> <h5 class='text-center'>" + data[i].title + 
-            "</h5> <p class='text-center'>" + data[i].body + "</p></li>");
+            "</h5> <p class='text-center'>" + data[i].body + 
+            "</p><button class='btn btn-danger delete-comment' data-id='" +
+            data[i]._id + "'>Delete Comment</button></li>");
+           
         }
         if(data.length===0){
           $("#comments-list").append("<h5 class='text-center'> No comment exist </h5>");
@@ -88,6 +91,24 @@ $('.scrape-article').on("click", () => { // Scrap Articles Request
     });
   });
   
+  $(document).on("click", ".delete-comment", function() {
+    // Grab the id associated with the article from the submit button
+    var thisId = $(this).attr("data-id");
+  $.ajax({
+      method: "DELETE",
+      url: "/notes/" + thisId
+    })
+      // With that done, add the note information to the page
+      .then(function(data) {
+        console.log(data);
+        $("#comments-list").empty();
+        $("#comments-list").append("<h5 class='text-center'>Comment is Deleted Successfuly. <h5>");
+    
+    });
+    
+  });
+
+
   // When you click the savenote button
   $(document).on("click", "#savenote", function() {
     // Grab the id associated with the article from the submit button
